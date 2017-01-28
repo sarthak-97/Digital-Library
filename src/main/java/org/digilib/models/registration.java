@@ -10,6 +10,19 @@ public class registration {
 	@Id
 	private String email;
 	private String avatar;
+	public registration(){}
+	public registration(String emailid,String avatar,String name)
+	        { 
+		super();
+		this.email=email;
+		this.avatar=avatar;
+		
+		this.name=name;
+		
+		
+		
+	         }
+	
 	public String getName() {
 		return name;
 	}

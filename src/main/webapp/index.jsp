@@ -20,7 +20,7 @@ function onSignIn(googleUser) {
   console.log('Email: ' + profile.getEmail());
     var redirectUrl = 'loginverify';
   var form = $('<form action="' + redirectUrl + '" method="post">' +
-                      '<input type="text" name="t2" value="' +
+                      '<input type="text" name="auth_token" value="' +
                        googleUser.getAuthResponse().id_token + '"  hidden />' +
                                                             '</form>');
 $('body').append(form);
