@@ -23,6 +23,7 @@ public class control {
 	@Autowired
 	private SessionFactory sessionFactory;
 	 registration reg;
+	 String avatar;
 
 	@RequestMapping(value = "/logins", method = RequestMethod.GET)
 	public ModelAndView adminloginverify(HttpSession httpSession) {
@@ -43,7 +44,7 @@ public class control {
         	 GoogleIdToken.Payload payLoad = IdTokenVerifierAndParser.getPayload(auth_token);
             String name = (String) payLoad.get("name");
             String email = payLoad.getEmail();
-            String avatar= (String) payLoad.get("picture");
+           avatar= (String) payLoad.get("picture");
             System.out.println("User name: " + name);
             System.out.println("User email: " + email);
             System.out.println("avatar" + avatar);
@@ -105,7 +106,7 @@ public class control {
 	}
 	
 	
-	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	@RequestMapping(value = "/search1", method = RequestMethod.POST)
 	public ModelAndView search(HttpSession httpSession , @RequestParam Map<String,String> req) {
 		 
 		String genre= req.get("genre");
@@ -113,6 +114,15 @@ public class control {
 		System.out.println(genre);
 		System.out.println(bk_name);
 		return null;
+	}
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public ModelAndView youtube(HttpSession httpSession, @RequestParam Map<String,String> req) {
+		  ModelAndView model = new ModelAndView("search");
+		  String src= req.get("src");
+		     model.addObject("src",src);
+		     model.addObject("avatar",avatar);
+		     
+		return model;
 	}
 	
 }

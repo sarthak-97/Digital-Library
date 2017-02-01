@@ -57,7 +57,7 @@ Login<i class="btn waves-effect waves-light"></i></button></li>
 
 <body>
 
-<div style="display:none" id=signout>
+<div  id=signout hidden>
 <a href="#" onclick="signOut();">Sign out</a>
 </div>
 <br>

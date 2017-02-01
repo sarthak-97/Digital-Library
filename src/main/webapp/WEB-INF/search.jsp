@@ -1,4 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+  <head>
 <head>
 <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -52,64 +56,49 @@ function onSignIn(googleUser) {
       </ul>
     </div>
   </nav>
-  
+
  <br>
- 
- <div style="margin-left: 550; margin-right: 100">
- SEARCH HERE FOR BOOKS
- <form class="col s12" action=search2 method=post><br>
- <div class="row">
+
+    <div id="buttons">
+    <label> <input id="query"  type="text" value="${src}" hidden /> 
+    <div id="container">
+      <h1>Search Results</h1>
+      <ul id="results"></ul>
+    </div>           
+    <script>
+    window.onload= function keyWordsearch(){
+        gapi.client.setApiKey('AIzaSyBW_hwG9wDN3jB3jutSTQEm-EAsiZYJ2gw');
+        gapi.client.load('youtube', 'v3', function() {
+                makeRequest();
+        });
+}
+    function makeRequest() {
+        var q = $('#query').val();
+        var request = gapi.client.youtube.search.list({
+                q: q,
+                part: 'snippet', 
+                maxResults: 10
+        });
+        request.execute(function(response)  {                                                                                    
+                $('#results').empty()
+                var srchItems = response.result.items;                      
+                $.each(srchItems, function(index, item) {
+                vidTitle = item.snippet.title;  
       
-            
-                <div class="row">
-               <label>select genre</label>
-               <select multiple name=genre>
-                  <option value="" disabled selected>Select genre</option>
-                  <option value="horror">horror</option>
-                  <option value="fiction">fiction</option>
-                  <option value="mystery">mystery</option>
-               </select>              
-            </div>
-
-  
-  <br><br>
-  <br>
-   	
-
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">library_books</i>
-          <input id="icon_prefix" type="text" class="validate" name="bk_name">
-          <label for="icon_prefix">book name</label>
-          
-  
-         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-          </div>
-  </div>
-  </form>
-
- search for study material
- <br>
- <form action=search method=post>
- enter video name to search<input type=text name=src><br>
- <input type=submit>
+                vid=item.id;
+                vid2=vid.videoId;
+               
+                   console.log(vid2); 
+                 
+                   
+                vidThumbimg = '<pre><iframe width="420" height="345" src="https://www.youtube.com/embed/'+vid2+'" allowfullscreen></iframe></pre>'; 
+                $('#results').append('<pre>' + vidTitle  + vidThumbimg +  '</pre>');                      
+        })  
+    })  
+}
+  </script> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">  </script>
  
- </form>
- 
- </div>
-
-
-
-<br>
-<div style="display:none"  id=signin  class="g-signin2" type="button" data-onsuccess="onSignIn">
-
-
-
-</div>
-
-
 </body>
-
 </html>
