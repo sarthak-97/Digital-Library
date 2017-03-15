@@ -10,19 +10,8 @@ public class registration {
 	@Id
 	private String email;
 	private String avatar;
-	public registration(){}
-	public registration(String emailid,String avatar,String name)
-	        { 
-		super();
-		this.email=email;
-		this.avatar=avatar;
-		
-		this.name=name;
-		
-		
-		
-	         }
-	
+	private String type;
+
 	public String getName() {
 		return name;
 	}
@@ -41,6 +30,11 @@ public class registration {
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
-	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	
 }

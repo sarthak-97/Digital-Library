@@ -55,44 +55,38 @@ function onSignIn(googleUser) {
   
  <br>
  
- <div style="margin-left: 550; margin-right: 100">
+
  SEARCH HERE FOR BOOKS
  <form class="col s12" action=search2 method=post><br>
  <div class="row">
       
             
-                <div class="row">
+            <div class="row">
                <label>select genre</label>
                <select multiple name=genre>
                   <option value="" disabled selected>Select genre</option>
                   <option value="horror">horror</option>
                   <option value="fiction">fiction</option>
                   <option value="mystery">mystery</option>
-               </select>              
+                </select>              
             </div>
+ </div>	
 
-  
-  <br><br>
-  <br>
-   	
-
-      <div class="row">
-        <div class="input-field col s6">
+<div class="row">
+          <div class="input-field col s6">
           <i class="material-icons prefix">library_books</i>
           <input id="icon_prefix" type="text" class="validate" name="bk_name">
           <label for="icon_prefix">book name</label>
-          
-  
-         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+          </button>
           </div>
   </div>
   </form>
 
  search for study material
  <br>
- <form action=search method=post>
+ <form action="searchvedio" method="post">
  enter video name to search<input type=text name=src><br>
  <input type=submit>
  

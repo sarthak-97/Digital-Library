@@ -45,27 +45,29 @@ function onSignIn(googleUser) {
 <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Dashboard</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
       
-        <li><a href="about.jsp">about</a></li>
-        <li><a href="contact.jsp">contact</a></li>
-        <li ><img src="${avatar}" width="40" height="40"  class="circle responsive-img" valign="middle" onclick="signOut()"  ></li>
-      
-      <li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
-        
-      </ul>
+        		<li><a href="about.jsp">about</a></li>
+        		<li><a href="contact.jsp">contact</a></li>
+        		<li ><img src="${avatar}" width="40" height="40"  class="circle responsive-img" valign="middle" onclick="signOut()"  ></li>
+      		    <li> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</li>
+          </ul>
     </div>
-  </nav>
+</nav>
 
  <br>
 
-    <div id="buttons">
-    <label> <input id="query"  type="text" value="${src}" hidden /> 
-    <div id="container">
-      <h1>Search Results</h1>
-      <ul id="results"></ul>
-    </div>           
-    <script>
+<div id="buttons">
+    		<label> <input id="query"  type="text" value="${src}" hidden /> 
+    		<div id="container">
+    			  <h1>Search Results</h1>
+      			  <ul id="results"></ul>
+    		</div>           
+            </label>
+</div>
+</body>
+
+<script>
     window.onload= function keyWordsearch(){
         gapi.client.setApiKey('AIzaSyBW_hwG9wDN3jB3jutSTQEm-EAsiZYJ2gw');
         gapi.client.load('youtube', 'v3', function() {
@@ -99,6 +101,4 @@ function onSignIn(googleUser) {
   </script> 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">  </script>
- 
-</body>
 </html>
