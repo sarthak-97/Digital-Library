@@ -29,6 +29,13 @@ public class control {
 	private SessionFactory sessionFactory;
 	
 	 String avatar;
+	 @RequestMapping(value = "/", method = RequestMethod.GET)
+		public ModelAndView a() {
+			  ModelAndView model = new ModelAndView("index");
+			
+			     
+			  return model;
+	 }
 	 
 	 /**
 	  * controller for login through google

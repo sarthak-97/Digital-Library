@@ -1,7 +1,6 @@
 <html>
 <head>
-<!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
      
 <meta name="google-signin-client_id" content="30081514308-nsdkis6qpuda4f9vr2mb2d3aeg0otqgq.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
