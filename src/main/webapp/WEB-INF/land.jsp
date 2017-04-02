@@ -100,7 +100,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">A modern responsive LIBRARY to provide a different way to LEARN</h5>
         </div>
       </div>
     </div>
@@ -126,7 +126,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+          <h5 class="header col s12 light">A modern responsive LIBRARY to achieve knowledge with FUN.</h5>
         </div>
       </div>
     </div>
