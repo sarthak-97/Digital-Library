@@ -21,6 +21,11 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+  <groupId>org.postgresql</groupId>
+  <artifactId>postgresql</artifactId>
+  <version>9.4.1208</version>
+</dependency>
+    <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-youtube</artifactId>
       <version>v3-rev181-1.22.0</version>
