@@ -31,7 +31,7 @@ public class control {
 	 String avatar;
 	 @RequestMapping(value = "/", method = RequestMethod.GET)
 		public ModelAndView a() {
-			  ModelAndView model = new ModelAndView("index");
+			  ModelAndView model = new ModelAndView("land");
 			
 			     
 			  return model;

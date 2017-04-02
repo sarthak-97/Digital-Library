@@ -18,7 +18,8 @@ classpath:/org/springframework/aop/config/spring-aop-3.0.xsd
 	<context:annotation-config />
 	<mvc:annotation-driven />
 <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
-<mvc:resources mapping="/js/**" location="/WEB-INF//js/"/>
+<mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
+<mvc:resources mapping="/img/**" location="/WEB-INF/img/"/>
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -29,10 +30,10 @@ classpath:/org/springframework/aop/config/spring-aop-3.0.xsd
 	
 
    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-       <property name="driverClassName" value="org.postgresql.Driver" />
-         <property name="url" value="jdbc:postgresql://digilib?createDatabaseIfNotExist=true" />
-         <property name="username" value="you" />
-        <property name="password" value="password" />
+       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+         <property name="url" value="jdbc:mysql://localhost:3306/digilib?createDatabaseIfNotExist=true" />
+         <property name="username" value="root" />
+        <property name="password" value="sar115" />
      </bean>
  
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -40,7 +41,7 @@ classpath:/org/springframework/aop/config/spring-aop-3.0.xsd
          <property name="packagesToScan" value="org.digilib.models" />
          <property name="hibernateProperties">
              <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                  <prop key="hibernate.current_session_context_class">thread</prop>
                  <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
                  <prop key="hibernate.show_sql">true</prop>

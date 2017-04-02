@@ -1,67 +1,77 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
 
-     
-<meta name="google-signin-client_id" content="30081514308-nsdkis6qpuda4f9vr2mb2d3aeg0otqgq.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-     
-<script>
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId());
-  // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
-    var redirectUrl = 'loginverify';
-  var form = $('<form action="' + redirectUrl + '" method="post">' +
-                      '<input type="text" name="auth_token" value="' +
-                       googleUser.getAuthResponse().id_token + '"  hidden />' +
-                                                            '</form>');
-$('body').append(form);
-form.submit();
- 
-}
-</script>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-      window.location="index.jsp";
-    });
-  }
-</script>
+
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="ISO-8859-1">
+<title>index</title>
 </head>
 <body>
-<!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-    
-<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><button class="g-signin2" type="button" data-onsuccess="onSignIn" id=demo>
-Login<i class="btn waves-effect waves-light"></i></button></li>
-        <li><a href="about.jsp">about</a></li>
-        <li><a href="contact.jsp">contact</a></li>      </ul>
+ <div class="navbar-fixed">
+	 <nav >
+    	<div class="nav-wrapper red accent-4 ">
+      	<a href="#" class="brand-logo">DIGITAL LIBRARY</a>
+      	<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>
     </div>
   </nav>
-  
-
-<body>
-
-<div  id=signout hidden>
-<a href="#" onclick="signOut();">Sign out</a>
 </div>
-<br>
 
-
-</body>
-
-</html>
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="img/1.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>A PERFECT PLACE</h3>
+          <h5 class="light grey-text text-lighten-3">Best place to get all the books ,music ant lots more.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="img/2.jpg"> <!-- random image -->
+        <div class="caption left-align">
+         <h3>NEED OF BOOKS!!! </h3>
+          <h5 class="light grey-text text-lighten-3">Search out some of latest books</h5>
+        </div>
+      </li>
+      <li>
+        <img src="img/3.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>GET SOME MUSIC!!!</h3>
+          <h5 class="light grey-text text-lighten-3">Check out the latest music here.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="img/4.jpg"> <!-- random image --> 
+        <div class="caption center-align">
+          <h3>NEED VIDEOS!!!</h3>
+          <h5 class="light grey-text text-lighten-3">Check out the all the videos of lectures and songs</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script>
+  $(document).ready(function(){
+      $('.slider').slider();
+    });
+        
+  </script>
+  </body>
+  </html>
